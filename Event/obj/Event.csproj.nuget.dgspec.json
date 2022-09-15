@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj": {}
+  },
+  "projects": {
+    "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj",
+        "projectName": "Event",
+        "projectPath": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj",
+        "packagesPath": "/Users/pablogarrido/.nuget/packages/",
+        "outputPath": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/pablogarrido/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid11.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid11.0": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid11.0": {
+          "dependencies": {
+            "Square.Picasso": {
+              "target": "Package",
+              "version": "[2.71828.0, )"
+            },
+            "Xam.Plugins.Android.InfiniteCycleViewPager": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.CardView": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
