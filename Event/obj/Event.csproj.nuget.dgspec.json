@@ -40,6 +40,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Realm": {
+              "target": "Package",
+              "version": "[10.15.1, )"
+            },
             "Square.Picasso": {
               "target": "Package",
               "version": "[2.71828.0, )"

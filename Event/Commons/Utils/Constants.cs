@@ -4,12 +4,12 @@ namespace Event.Commons.Utils
     public class Constants
     {
         public static string CONCERTS = "Conciertos";
-        public static string CINEMA = "Conciertos";
-        public static string PODCAST = "Conciertos";
-        public static string FIFA_WORLD_CUP = "Conciertos";
-        public static string THEATER = "Conciertos";
-        public static string STANDUP = "Conciertos";
-        public static string LOLLAPALOZA = "Conciertos";
+        public static string CINEMA = "Cine";
+        public static string PODCAST = "Podcast";
+        public static string FIFA_WORLD_CUP = "Fifa world cup 2022";
+        public static string THEATER = "Festivales de teatro";
+        public static string STANDUP = "StandUp";
+        public static string LOLLAPALOZA = "Lollapaloza2023";
     }
 }
 

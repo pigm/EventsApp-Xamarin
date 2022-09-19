@@ -14,7 +14,7 @@ namespace Event.Event.Presentation.Adapter
     public class ListEventAdapter : BaseAdapter
     {
         Context context;
-        List<EventData> eventData;
+        List<EventData> eventData;  
 
         public ListEventAdapter(Context context, List<EventData> eventData)
         {
@@ -38,10 +38,9 @@ namespace Event.Event.Presentation.Adapter
         {
             if (convertView == null)
             {
-                LayoutInflater inflater = (LayoutInflater) context.GetSystemService(Context.LayoutInflaterService);
+                LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
                 convertView = inflater.Inflate(Resource.Layout.item_card_event, parent, false);
             }
-
             ImageView eventImage = (ImageView)convertView.FindViewById(Resource.Id.eventImage);
             TextView dayText = (TextView)convertView.FindViewById(Resource.Id.dayText);
             TextView monthText = (TextView)convertView.FindViewById(Resource.Id.monthText);
@@ -63,8 +62,6 @@ namespace Event.Event.Presentation.Adapter
                 goToDetailEvent.PutExtra("EVENT", JsonConvert.SerializeObject(eventData[position]));
                 context.StartActivity(goToDetailEvent);
             };
-
-
             return convertView;
         }
     }

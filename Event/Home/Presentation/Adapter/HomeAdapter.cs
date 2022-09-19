@@ -13,6 +13,8 @@ using Java.Net;
 using Square.Picasso;
 using Event.Home.Data.Model;
 using Event.Event.Presentation.Activity;
+using Newtonsoft.Json;
+using Console = System.Console;
 
 namespace Event.Home.Presentation.Adapter
 {
@@ -49,7 +51,9 @@ namespace Event.Home.Presentation.Adapter
 
             view.Click += delegate
             {
-                context.StartActivity(new Intent(context, typeof(ListEventActivity)));
+                Intent goToListEvents = new Intent(context, typeof(ListEventActivity));
+                goToListEvents.PutExtra("CATEGORY", categoryDataList[position].Name);
+                context.StartActivity(goToListEvents);
             };
 
             container.AddView(view);

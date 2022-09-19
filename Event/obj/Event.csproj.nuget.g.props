@@ -12,4 +12,8 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/pablogarrido/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)realm.fody/10.15.1/build/Realm.Fody.props" Condition="Exists('$(NuGetPackageRoot)realm.fody/10.15.1/build/Realm.Fody.props')" />
+    <Import Project="$(NuGetPackageRoot)realm/10.15.1/build/monoandroid/Realm.props" Condition="Exists('$(NuGetPackageRoot)realm/10.15.1/build/monoandroid/Realm.props')" />
+  </ImportGroup>
 </Project>
