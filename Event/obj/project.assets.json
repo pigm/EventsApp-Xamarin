@@ -2,6 +2,21 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v11.0": {
+      "Com.Airbnb.Android.Lottie/3.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v7.AppCompat": "28.0.0.3"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Lottie.Android.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Lottie.Android.dll": {}
+        }
+      },
       "Square.OkHttp3/3.11.0": {
         "type": "package",
         "dependencies": {
@@ -799,6 +814,23 @@
     }
   },
   "libraries": {
+    "Com.Airbnb.Android.Lottie/3.0.6": {
+      "sha512": "wmGEgcRSOSz9YpVT3OjwwGKVYXlG33jh8wAz+83qqLE0DmSA5UM2ThBnXOR83C9CCOe7C0YtfEdkRZalH7hX6A==",
+      "type": "package",
+      "path": "com.airbnb.android.lottie/3.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "com.airbnb.android.lottie.3.0.6.nupkg.sha512",
+        "com.airbnb.android.lottie.nuspec",
+        "icon.png",
+        "lib/monoandroid90/Lottie.Android.dll",
+        "lib/monoandroid90/Lottie.Android.pdb",
+        "lib/monoandroid90/Lottie.Android.xml",
+        "readme.txt"
+      ]
+    },
     "Square.OkHttp3/3.11.0": {
       "sha512": "chd63F8Hh14XQIphPMdd9ZV29kQatPO2MpemyTb+qVGJTtqyPnAqHscSWJCEkmwKv9MzyuUMMbntuAbmKX7cqw==",
       "type": "package",
@@ -1605,6 +1637,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v11.0": [
+      "Com.Airbnb.Android.Lottie >= 3.0.6",
       "Square.Picasso >= 2.71828.0",
       "Xam.Plugins.Android.InfiniteCycleViewPager >= 1.0.2",
       "Xamarin.Android.Support.Design >= 28.0.0.3",
@@ -1644,6 +1677,10 @@
     "frameworks": {
       "monoandroid11.0": {
         "dependencies": {
+          "Com.Airbnb.Android.Lottie": {
+            "target": "Package",
+            "version": "[3.0.6, )"
+          },
           "Square.Picasso": {
             "target": "Package",
             "version": "[2.71828.0, )"

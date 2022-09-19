@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Event.dll" comes first in this list. */
 		"Event.dll",
 		"InfiniteCycleViewPager.dll",
+		"Lottie.Android.dll",
 		"Square.OkHttp3.dll",
 		"Square.OkIO.dll",
 		"Square.Picasso.dll",

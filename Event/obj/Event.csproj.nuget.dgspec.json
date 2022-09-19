@@ -32,6 +32,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Com.Airbnb.Android.Lottie": {
+              "target": "Package",
+              "version": "[3.0.6, )"
+            },
             "Square.Picasso": {
               "target": "Package",
               "version": "[2.71828.0, )"
