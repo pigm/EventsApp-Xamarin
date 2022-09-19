@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorPrimaryDark">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:layout_margin="4dp">
+         <ImageView
+        android:id="@+id/eventImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_empty_image"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/dayText"
+                android:textColor="@color/colorSecondaryFont"
+                android:textFontWeight="900"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_gravity="center"
+                tools:text="21"/>
+            <TextView
+                android:id="@+id/monthText"
+                android:textFontWeight="900"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"
+                tools:text="SEP"/>
+        </LinearLayout>
+         <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/titleEventText"
+                android:textColor="@android:color/black"
+                android:textFontWeight="900"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="VIVALDI: Cuatro Estaciones | Orquesta Solistas de América"/>
+            <TextView
+                android:id="@+id/addressEventText"
+                android:textFontWeight="900"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Teatro José Pablo Moncayo - PALCCO"/>
+            
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/priceEventText"
+        android:textFontWeight="900"
+        android:textStyle="bold"
+        android:textColor="@color/colorPriceFont"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        tools:text="$200.00 MXN"/>
+    </LinearLayout>
+</LinearLayout>
+

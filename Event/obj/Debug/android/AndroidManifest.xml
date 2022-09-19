@@ -22,7 +22,9 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:configChanges="orientation|screenSize" android:label="HomeActivity" android:screenOrientation="portrait" android:theme="@style/ThemeNoActionBar" android:name="crc644ef014cbc97a0f62.ListEventActivity" />
+    <activity android:configChanges="orientation|screenSize" android:label="ListEventActivity" android:screenOrientation="portrait" android:theme="@style/ThemeNoActionBar" android:name="crc644ef014cbc97a0f62.ListEventActivity" />
+    <activity android:configChanges="orientation|screenSize" android:label="EventDetailActivity" android:screenOrientation="portrait" android:theme="@style/ThemeNoActionBar" android:name="crc644ef014cbc97a0f62.EventDetailActivity" />
+    <activity android:configChanges="orientation|screenSize" android:label="AddEventActivity" android:screenOrientation="portrait" android:theme="@style/ThemeNoActionBar" android:name="crc644ef014cbc97a0f62.AddEventActivity" />
     <activity android:configChanges="orientation|screenSize" android:label="HomeActivity" android:screenOrientation="portrait" android:theme="@style/ThemeNoActionBar" android:name="crc64366125ac8a654a9d.HomeActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.boletia.event.event.mono.MonoRuntimeProvider.__mono_init__" />
     <provider android:name="com.squareup.picasso.PicassoProvider" android:authorities="com.boletia.event.event.com.squareup.picasso" android:exported="false" />

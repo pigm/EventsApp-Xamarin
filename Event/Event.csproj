@@ -74,6 +74,10 @@
     <Compile Include="Event\Presentation\Activity\ListEventActivity.cs" />
     <Compile Include="Event\Presentation\Presenter\ListEventPresenter.cs" />
     <Compile Include="Event\Presentation\Contract\ListEventContract.cs" />
+    <Compile Include="Event\Presentation\Adapter\ListEventAdapter.cs" />
+    <Compile Include="Event\Data\EventData.cs" />
+    <Compile Include="Event\Presentation\Activity\EventDetailActivity.cs" />
+    <Compile Include="Event\Presentation\Activity\AddEventActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -163,6 +167,18 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_card_event.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\toolbar.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_detail_event.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -209,6 +225,9 @@
     </PackageReference>
     <PackageReference Include="Com.Airbnb.Android.Lottie">
       <Version>3.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

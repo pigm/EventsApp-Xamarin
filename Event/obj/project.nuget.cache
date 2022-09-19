@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZG5XVtSuwznDlWNtYTPftQxTuY+BSgGNZU9AeuGv5BLbtWO5HQap1tQGKQ7QOKnp3OZPfoCmvgBRKBanFR6jhA==",
+  "dgSpecHash": "26RsUma0dh2zNxdxkRQCfckkfw48kPW6F/pyhXYxHTUaLj5d0jxC46fY6av6XMDNReWWzkCKXfXcEnOicrdrDQ==",
   "success": true,
   "projectFilePath": "/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/Event.csproj",
   "expectedPackageFiles": [
     "/Users/pablogarrido/.nuget/packages/com.airbnb.android.lottie/3.0.6/com.airbnb.android.lottie.3.0.6.nupkg.sha512",
+    "/Users/pablogarrido/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/pablogarrido/.nuget/packages/square.okhttp3/3.11.0/square.okhttp3.3.11.0.nupkg.sha512",
     "/Users/pablogarrido/.nuget/packages/square.okio/1.15.0/square.okio.1.15.0.nupkg.sha512",
     "/Users/pablogarrido/.nuget/packages/square.picasso/2.71828.0/square.picasso.2.71828.0.nupkg.sha512",

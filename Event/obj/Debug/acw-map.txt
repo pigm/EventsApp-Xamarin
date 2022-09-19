@@ -1,9 +1,18 @@
 Event.MainActivity, Event;crc649a14408cf53377de.MainActivity
 Event.MainActivity;crc649a14408cf53377de.MainActivity
 event.MainActivity;crc649a14408cf53377de.MainActivity
+Event.Event.Presentation.Adapter.ListEventAdapter, Event;crc6476d35a06601358a4.ListEventAdapter
+Event.Event.Presentation.Adapter.ListEventAdapter;crc6476d35a06601358a4.ListEventAdapter
+event.event.presentation.adapter.ListEventAdapter;crc6476d35a06601358a4.ListEventAdapter
 Event.Event.Presentation.Activity.ListEventActivity, Event;crc644ef014cbc97a0f62.ListEventActivity
 Event.Event.Presentation.Activity.ListEventActivity;crc644ef014cbc97a0f62.ListEventActivity
 event.event.presentation.activity.ListEventActivity;crc644ef014cbc97a0f62.ListEventActivity
+Event.Event.Presentation.Activity.EventDetailActivity, Event;crc644ef014cbc97a0f62.EventDetailActivity
+Event.Event.Presentation.Activity.EventDetailActivity;crc644ef014cbc97a0f62.EventDetailActivity
+event.event.presentation.activity.EventDetailActivity;crc644ef014cbc97a0f62.EventDetailActivity
+Event.Event.Presentation.Activity.AddEventActivity, Event;crc644ef014cbc97a0f62.AddEventActivity
+Event.Event.Presentation.Activity.AddEventActivity;crc644ef014cbc97a0f62.AddEventActivity
+event.event.presentation.activity.AddEventActivity;crc644ef014cbc97a0f62.AddEventActivity
 Event.Home.Presentation.Adapter.HomeAdapter, Event;crc649276dd7108988476.HomeAdapter
 Event.Home.Presentation.Adapter.HomeAdapter;crc649276dd7108988476.HomeAdapter
 event.home.presentation.adapter.HomeAdapter;crc649276dd7108988476.HomeAdapter

@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Security;
 using Android.Graphics;
 using Android.Widget;
+using Event.Event.Data;
 
 namespace Event.Commons.Utils
 {

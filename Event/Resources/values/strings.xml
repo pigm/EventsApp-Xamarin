@@ -5,4 +5,9 @@
     <string name="empty_template_body">No se han encontrado eventos disponible\npara esta categoria.\nPresiona el botón para agregar un evento.</string>
     <string name="add">AGREGAR</string>
     <string name="subtitle_home">Top de categorias en eventos, pensados para ti.</string>
+    <string name="subtitle_event">Descubre tu evento favorito y disfrutemos juntos.</string>
+    <string name="events">Eventos</string>
+    <string name="events_detail">Detalle evento</string>
+    <string name="add_event">Agregar evento</string>
+    <string name="payment">PAGAR</string>
 </resources>

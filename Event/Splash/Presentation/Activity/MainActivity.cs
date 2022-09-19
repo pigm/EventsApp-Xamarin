@@ -40,6 +40,7 @@ namespace Event
                 try
                 {
                     StartActivity(new Intent(this, typeof(HomeActivity)));
+                    Finish();
                 }
                 catch (Exception e)
                 {

@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"Event.dll",
 		"InfiniteCycleViewPager.dll",
 		"Lottie.Android.dll",
+		"Newtonsoft.Json.dll",
 		"Square.OkHttp3.dll",
 		"Square.OkIO.dll",
 		"Square.Picasso.dll",
