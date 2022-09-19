@@ -1619,11 +1619,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj",
+      "projectUniqueName": "/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/Event.csproj",
       "projectName": "Event",
-      "projectPath": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj",
+      "projectPath": "/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/Event.csproj",
       "packagesPath": "/Users/pablogarrido/.nuget/packages/",
-      "outputPath": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/obj/",
+      "outputPath": "/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

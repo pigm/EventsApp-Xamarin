@@ -4,32 +4,48 @@ using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Com.Gigamole.Infinitecycleviewpager;
+using Event.Commons.Utils;
 using Event.Home.Data.Model;
 using Event.Home.Presentation.Adapter;
 
 namespace Event.Home.Presentation.Activity
 {
-    [Activity(Label = "HomeActivity", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize |
+    [Activity(Label = "HomeActivity", Theme = "@style/ThemeNoActionBar", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize |
              Android.Content.PM.ConfigChanges.Orientation,
              ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class HomeActivity : AppCompatActivity
+    public class HomeActivity : AppCompatActivity, BaseActivity
     {
         HorizontalInfiniteCycleViewPager viewPager;
-        List<EventData> listEvent = new List<EventData>();
+        List<CategoryData> listEvent = new List<CategoryData>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_home);
-            InitData();
+            InitComponentView();
+            InitView();
+        }
+
+        public void InitComponentView()
+        {
             viewPager = FindViewById<HorizontalInfiniteCycleViewPager>(Resource.Id.viewPager);
+        }
+
+        public void InitView()
+        {
+            InitData();
             viewPager.Adapter = new HomeAdapter(this, listEvent);
         }
 
         private void InitData()
         {
-            listEvent.Add(new EventData("Shakira", "Shakira Isabel Mebarak Ripoll (Barranquilla, Colombia; 2 de febrero de 1977), conocida simplemente como Shakira, es una cantautora, bailarina, actriz y empresaria colombiana naturalizada española.", "https://es.wikipedia.org/wiki/Shakira#/media/Archivo:Shakira_for_VOGUE_in_2021_2.png"));
-            listEvent.Add(new EventData("Juan Gabriel", "Alberto Aguilera Valadez (Parácuaro, Michoacán, 7 de enero de 1950-Santa Mónica, California, 28 de agosto de 2016), conocido como Juan Gabriel, fue un cantautor y actor mexicano.", "https://es.wikipedia.org/wiki/Juan_Gabriel#/media/Archivo:Juan_Gabriel_---_Pepsi_Center_---_09.26.14_(cropped_2).jpg"));
+            listEvent.Add(new CategoryData(Constants.CONCERTS, Resource.Drawable.img_concerts));
+            listEvent.Add(new CategoryData(Constants.CINEMA, Resource.Drawable.img_cinema));
+            listEvent.Add(new CategoryData(Constants.PODCAST, Resource.Drawable.img_podcast));
+            listEvent.Add(new CategoryData(Constants.FIFA_WORLD_CUP, Resource.Drawable.img_qatar));
+            listEvent.Add(new CategoryData(Constants.THEATER, Resource.Drawable.img_theater));
+            listEvent.Add(new CategoryData(Constants.STANDUP, Resource.Drawable.img_standup));
+            listEvent.Add(new CategoryData(Constants.LOLLAPALOZA, Resource.Drawable.img_lollapaloza));
         }
     }
 }

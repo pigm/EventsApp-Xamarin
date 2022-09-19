@@ -20,8 +20,9 @@ public class OkHttpClient$Builder_DnsImpl
 	public OkHttpClient$Builder_DnsImpl ()
 	{
 		super ();
-		if (getClass () == OkHttpClient$Builder_DnsImpl.class)
+		if (getClass () == OkHttpClient$Builder_DnsImpl.class) {
 			mono.android.TypeManager.Activate ("Square.OkHttp3.OkHttpClient+Builder+DnsImpl, Square.OkHttp3", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

@@ -20,8 +20,9 @@ public class OkHttpClient$Builder_HostnameVerifierImpl
 	public OkHttpClient$Builder_HostnameVerifierImpl ()
 	{
 		super ();
-		if (getClass () == OkHttpClient$Builder_HostnameVerifierImpl.class)
+		if (getClass () == OkHttpClient$Builder_HostnameVerifierImpl.class) {
 			mono.android.TypeManager.Activate ("Square.OkHttp3.OkHttpClient+Builder+HostnameVerifierImpl, Square.OkHttp3", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

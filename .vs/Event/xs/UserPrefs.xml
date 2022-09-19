@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{5310E991-9275-4158-AD4A-34E381134253}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_33_x86_64" />
+  <MonoDevelop.Ide.ItemProperties.App.Event PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" AndroidDesignerPreferredTheme="AppTheme" AndroidDesignerPreferredDevice="pixel_3a_xl" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Home/Presentation/Adapter/HomeAdapter.cs">
+    <Files>
+      <File FileName="Event/Home/Presentation/Activity/HomeActivity.cs" Line="36" Column="1" />
+      <File FileName="Event/Commons/Utils/Constants.cs" Line="12" Column="41" />
+      <File FileName="Event/Commons/Utils/GeneralUtils.cs" Line="6" Column="23" />
+      <File FileName="Event/Home/Presentation/Adapter/HomeAdapter.cs" Line="21" Column="19" />
+      <File FileName="Event/Commons/Utils/BaseActivity.cs" Line="9" Column="32" />
+      <File FileName="Event/Home/Data/Model/CategoryData.cs" Line="2" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Event" expanded="True">
+            <Node name="App" expanded="True">
+              <Node name="Event" expanded="True">
+                <Node name="Commons" expanded="True">
+                  <Node name="Utils" expanded="True" />
+                </Node>
+                <Node name="Home" expanded="True">
+                  <Node name="Data" expanded="True">
+                    <Node name="Model" expanded="True" />
+                  </Node>
+                  <Node name="Presentation" expanded="True">
+                    <Node name="Adapter" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

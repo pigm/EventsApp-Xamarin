@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lIozt594FXklEoXZmRs9nzW74S1knyrnM8V49LupcNSZ26RnE/51DruWMTJb5fMkXPCNXOOhrqMF2y+eWvB/sA==",
+  "dgSpecHash": "UNOxf7i2NN1zkaAZsV3lsTBX60qMhy8WDbltiOJStJzx+IGcjUiF7HWxQ99Jrc3rjlbU8Use3fPFv+zOEt37JA==",
   "success": true,
-  "projectFilePath": "/Users/pablogarrido/Desktop/Repositorios/Xamarin/Event/Event/Event/Event.csproj",
+  "projectFilePath": "/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/Event.csproj",
   "expectedPackageFiles": [
     "/Users/pablogarrido/.nuget/packages/square.okhttp3/3.11.0/square.okhttp3.3.11.0.nupkg.sha512",
     "/Users/pablogarrido/.nuget/packages/square.okio/1.15.0/square.okio.1.15.0.nupkg.sha512",

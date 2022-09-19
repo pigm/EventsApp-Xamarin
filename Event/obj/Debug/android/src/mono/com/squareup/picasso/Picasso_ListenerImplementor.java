@@ -20,8 +20,9 @@ public class Picasso_ListenerImplementor
 	public Picasso_ListenerImplementor ()
 	{
 		super ();
-		if (getClass () == Picasso_ListenerImplementor.class)
+		if (getClass () == Picasso_ListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Square.Picasso.Picasso+IListenerImplementor, Square.Picasso", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

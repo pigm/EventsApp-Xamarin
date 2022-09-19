@@ -19,8 +19,9 @@ public class MainActivity
 	public MainActivity ()
 	{
 		super ();
-		if (getClass () == MainActivity.class)
+		if (getClass () == MainActivity.class) {
 			mono.android.TypeManager.Activate ("Event.MainActivity, Event", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

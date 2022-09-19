@@ -21,8 +21,9 @@ public class OnInfiniteCyclePageTransformListenerImplementor
 	public OnInfiniteCyclePageTransformListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnInfiniteCyclePageTransformListenerImplementor.class)
+		if (getClass () == OnInfiniteCyclePageTransformListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Com.Gigamole.Infinitecycleviewpager.IOnInfiniteCyclePageTransformListenerImplementor, InfiniteCycleViewPager", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

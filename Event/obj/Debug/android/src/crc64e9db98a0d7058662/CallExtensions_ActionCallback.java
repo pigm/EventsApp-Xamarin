@@ -21,8 +21,9 @@ public class CallExtensions_ActionCallback
 	public CallExtensions_ActionCallback ()
 	{
 		super ();
-		if (getClass () == CallExtensions_ActionCallback.class)
+		if (getClass () == CallExtensions_ActionCallback.class) {
 			mono.android.TypeManager.Activate ("Square.OkHttp3.CallExtensions+ActionCallback, Square.OkHttp3", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

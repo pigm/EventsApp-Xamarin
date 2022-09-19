@@ -19,8 +19,9 @@ public class HomeActivity
 	public HomeActivity ()
 	{
 		super ();
-		if (getClass () == HomeActivity.class)
+		if (getClass () == HomeActivity.class) {
 			mono.android.TypeManager.Activate ("Event.Home.Presentation.Activity.HomeActivity, Event", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

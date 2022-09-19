@@ -21,8 +21,9 @@ public class RequestCreator_ActionCallback
 	public RequestCreator_ActionCallback ()
 	{
 		super ();
-		if (getClass () == RequestCreator_ActionCallback.class)
+		if (getClass () == RequestCreator_ActionCallback.class) {
 			mono.android.TypeManager.Activate ("Square.Picasso.RequestCreator+ActionCallback, Square.Picasso", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

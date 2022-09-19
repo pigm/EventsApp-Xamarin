@@ -22,8 +22,9 @@ public class HomeAdapter
 	public HomeAdapter ()
 	{
 		super ();
-		if (getClass () == HomeAdapter.class)
+		if (getClass () == HomeAdapter.class) {
 			mono.android.TypeManager.Activate ("Event.Home.Presentation.Adapter.HomeAdapter, Event", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

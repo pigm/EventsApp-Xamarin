@@ -1,1 +1,1 @@
-<Devices><Device id="ZY32CJD2CN"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>30</SdkVersion></Device></Devices>
+<Devices><Device id="ZY32CJD2CN"><ResultingAbi>arm64-v8a</ResultingAbi><ToolsAbi /><SdkVersion>30</SdkVersion><LongOutput>usb:339738624X;product:java_retail;model:moto_g_20_;device:java;transport_id:3</LongOutput></Device></Devices>

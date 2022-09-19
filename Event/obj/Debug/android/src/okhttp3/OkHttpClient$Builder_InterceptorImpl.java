@@ -20,8 +20,9 @@ public class OkHttpClient$Builder_InterceptorImpl
 	public OkHttpClient$Builder_InterceptorImpl ()
 	{
 		super ();
-		if (getClass () == OkHttpClient$Builder_InterceptorImpl.class)
+		if (getClass () == OkHttpClient$Builder_InterceptorImpl.class) {
 			mono.android.TypeManager.Activate ("Square.OkHttp3.OkHttpClient+Builder+InterceptorImpl, Square.OkHttp3", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

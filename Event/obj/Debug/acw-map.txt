@@ -25,12 +25,33 @@ okhttp3.OkHttpClient$Builder_DnsImpl;okhttp3.OkHttpClient$Builder_DnsImpl
 Square.OkHttp3.OkHttpClient+Builder+HostnameVerifierImpl, Square.OkHttp3;okhttp3.OkHttpClient$Builder_HostnameVerifierImpl
 Square.OkHttp3.OkHttpClient.Builder.HostnameVerifierImpl;okhttp3.OkHttpClient$Builder_HostnameVerifierImpl
 okhttp3.OkHttpClient$Builder_HostnameVerifierImpl;okhttp3.OkHttpClient$Builder_HostnameVerifierImpl
+Square.Picasso.Picasso+IListener, Square.Picasso;com.squareup.picasso.Picasso$Listener
+Square.Picasso.Picasso.IListener;com.squareup.picasso.Picasso$Listener
+com.squareup.picasso.Picasso$Listener;com.squareup.picasso.Picasso$Listener
 Square.Picasso.Picasso+IListenerImplementor, Square.Picasso;mono.com.squareup.picasso.Picasso_ListenerImplementor
 Square.Picasso.Picasso.IListenerImplementor;mono.com.squareup.picasso.Picasso_ListenerImplementor
 mono.com.squareup.picasso.Picasso_ListenerImplementor;mono.com.squareup.picasso.Picasso_ListenerImplementor
+Square.Picasso.Picasso+IRequestTransformer, Square.Picasso;com.squareup.picasso.Picasso$RequestTransformer
+Square.Picasso.Picasso.IRequestTransformer;com.squareup.picasso.Picasso$RequestTransformer
+com.squareup.picasso.Picasso$RequestTransformer;com.squareup.picasso.Picasso$RequestTransformer
 Square.Picasso.RequestCreator+ActionCallback, Square.Picasso;com.squareup.picasso.RequestCreator_ActionCallback
 Square.Picasso.RequestCreator.ActionCallback;com.squareup.picasso.RequestCreator_ActionCallback
 com.squareup.picasso.RequestCreator_ActionCallback;com.squareup.picasso.RequestCreator_ActionCallback
+Square.Picasso.ICache, Square.Picasso;com.squareup.picasso.Cache
+Square.Picasso.ICache;com.squareup.picasso.Cache
+com.squareup.picasso.Cache;com.squareup.picasso.Cache
+Square.Picasso.ICallback, Square.Picasso;com.squareup.picasso.Callback
+Square.Picasso.ICallback;com.squareup.picasso.Callback
+com.squareup.picasso.Callback;com.squareup.picasso.Callback
+Square.Picasso.IDownloader, Square.Picasso;com.squareup.picasso.Downloader
+Square.Picasso.IDownloader;com.squareup.picasso.Downloader
+com.squareup.picasso.Downloader;com.squareup.picasso.Downloader
+Square.Picasso.ITarget, Square.Picasso;com.squareup.picasso.Target
+Square.Picasso.ITarget;com.squareup.picasso.Target
+com.squareup.picasso.Target;com.squareup.picasso.Target
+Square.Picasso.ITransformation, Square.Picasso;com.squareup.picasso.Transformation
+Square.Picasso.ITransformation;com.squareup.picasso.Transformation
+com.squareup.picasso.Transformation;com.squareup.picasso.Transformation
 Android.Support.V4.View.AsyncLayoutInflater+IOnInflateFinishedListenerImplementor, Xamarin.Android.Support.AsyncLayoutInflater;mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor
 Android.Support.V4.View.AsyncLayoutInflater.IOnInflateFinishedListenerImplementor;mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor
 mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor;mono.android.support.v4.view.AsyncLayoutInflater_OnInflateFinishedListenerImplementor

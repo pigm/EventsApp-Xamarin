@@ -20,8 +20,9 @@ public class OkHttpClient$Builder_AuthenticatorImpl
 	public OkHttpClient$Builder_AuthenticatorImpl ()
 	{
 		super ();
-		if (getClass () == OkHttpClient$Builder_AuthenticatorImpl.class)
+		if (getClass () == OkHttpClient$Builder_AuthenticatorImpl.class) {
 			mono.android.TypeManager.Activate ("Square.OkHttp3.OkHttpClient+Builder+AuthenticatorImpl, Square.OkHttp3", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 
