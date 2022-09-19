@@ -71,6 +71,9 @@
     <Compile Include="Home\Data\Model\CategoryData.cs" />
     <Compile Include="Home\Presentation\Contract\HomeContract.cs" />
     <Compile Include="Home\Presentation\Presenter\HomePresenter.cs" />
+    <Compile Include="Event\Presentation\Activity\ListEventActivity.cs" />
+    <Compile Include="Event\Presentation\Presenter\ListEventPresenter.cs" />
+    <Compile Include="Event\Presentation\Contract\ListEventContract.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

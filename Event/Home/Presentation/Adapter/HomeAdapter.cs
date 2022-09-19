@@ -12,6 +12,7 @@ using Java.IO;
 using Java.Net;
 using Square.Picasso;
 using Event.Home.Data.Model;
+using Event.Event.Presentation.Activity;
 
 namespace Event.Home.Presentation.Adapter
 {
@@ -48,7 +49,7 @@ namespace Event.Home.Presentation.Adapter
 
             view.Click += delegate
             {
-                
+                context.StartActivity(new Intent(context, typeof(ListEventActivity)));
             };
 
             container.AddView(view);
