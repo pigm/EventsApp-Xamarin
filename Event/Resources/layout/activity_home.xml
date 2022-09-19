@@ -10,7 +10,7 @@
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:elevation="5dp"
+		android:elevation="3dp"
 		android:background="@android:color/white">
 		<ImageView
 			android:src="@drawable/ic_logo"

@@ -7,6 +7,7 @@ using Com.Gigamole.Infinitecycleviewpager;
 using Event.Commons.Utils;
 using Event.Home.Data.Model;
 using Event.Home.Presentation.Adapter;
+using Event.Home.Presentation.Presenter;
 
 namespace Event.Home.Presentation.Activity
 {
@@ -15,8 +16,8 @@ namespace Event.Home.Presentation.Activity
              ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class HomeActivity : AppCompatActivity, BaseActivity
     {
+        HomePresenter presenter = HomePresenter.Instance;
         HorizontalInfiniteCycleViewPager viewPager;
-        List<CategoryData> listEvent = new List<CategoryData>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,19 +34,8 @@ namespace Event.Home.Presentation.Activity
 
         public void InitView()
         {
-            InitData();
-            viewPager.Adapter = new HomeAdapter(this, listEvent);
-        }
-
-        private void InitData()
-        {
-            listEvent.Add(new CategoryData(Constants.CONCERTS, Resource.Drawable.img_concerts));
-            listEvent.Add(new CategoryData(Constants.CINEMA, Resource.Drawable.img_cinema));
-            listEvent.Add(new CategoryData(Constants.PODCAST, Resource.Drawable.img_podcast));
-            listEvent.Add(new CategoryData(Constants.FIFA_WORLD_CUP, Resource.Drawable.img_qatar));
-            listEvent.Add(new CategoryData(Constants.THEATER, Resource.Drawable.img_theater));
-            listEvent.Add(new CategoryData(Constants.STANDUP, Resource.Drawable.img_standup));
-            listEvent.Add(new CategoryData(Constants.LOLLAPALOZA, Resource.Drawable.img_lollapaloza));
+            var listCategory = presenter.SetData();
+            viewPager.Adapter = new HomeAdapter(this, listCategory);
         }
     }
 }
