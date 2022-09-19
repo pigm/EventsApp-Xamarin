@@ -79,6 +79,7 @@
     <Compile Include="Event\Presentation\Activity\EventDetailActivity.cs" />
     <Compile Include="Event\Presentation\Activity\AddEventActivity.cs" />
     <Compile Include="Event\Presentation\Contract\AddEventContract.cs" />
+    <Compile Include="Commons\DataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

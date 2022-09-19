@@ -20,6 +20,8 @@ using Event.Event.Data;
 using Newtonsoft.Json;
 using static Android.Provider.CalendarContract;
 using static Android.Icu.Text.Transliterator;
+using Event.Commons;
+using static Android.Support.V7.Widget.RecyclerView;
 
 namespace Event.Event.Presentation.Activity
 {
@@ -59,24 +61,24 @@ namespace Event.Event.Presentation.Activity
                 goToAddEventActivity.PutExtra("CATEGORY", category);
                 StartActivity(goToAddEventActivity);
             };
-            backImage.Click += delegate { Finish(); };
+            backImage.Click += delegate { OnBackPressed(); };
             titleToolbarText.Text = GetString(Resource.String.events);
-            List<EventData> listEventData = new List<EventData>();
-            List<EventData> listEventDataFilterCategory = new List<EventData>();
-            listEventData.Add(new EventData("Bad bunny, La playa tour", "Conciertos", "Arena Monterrey", "20 Noviembre 2022", "18:00", "00:00", "https://i.pinimg.com/736x/7e/d9/a2/7ed9a2493ea2fe2c5ac6a991dc3351fe.jpg", 1500.50, "https://www.mercadopago.com.mx/paid?&utm_source=google&utm_medium=cpc&utm_campaign=MLM_MP_G_AO_GEN_ALL_BRAND_ALL_CONV_EXACT&matt_tool=53751208&matt_word=&gclid=CjwKCAjwpqCZBhAbEiwAa7pXeWwrWSV-hlxBJNvNNyWXAMTKafKXwTcqu_X9qfdKSdiBNbTgx68uRBoC7SUQAvD_BwE"));
-            listEventData.Add(new EventData("Karol G, Bichota tour", "Conciertos", "Arena Monterrey", "13 Diciembre 2022", "21:00", "00:00", "https://i.pinimg.com/564x/e6/9e/3d/e69e3d1b47fafd4889358435f4e60e97.jpg", 800.00, "https://www.mercadopago.com.mx/paid?&utm_source=google&utm_medium=cpc&utm_campaign=MLM_MP_G_AO_GEN_ALL_BRAND_ALL_CONV_EXACT&matt_tool=53751208&matt_word=&gclid=CjwKCAjwpqCZBhAbEiwAa7pXeWwrWSV-hlxBJNvNNyWXAMTKafKXwTcqu_X9qfdKSdiBNbTgx68uRBoC7SUQAvD_BwE"));
-            listEventData.Add(new EventData("Anuel AA, Leyendas tour", "Conciertos", "Arena Monterrey", "27 Diciembre 2022", "20:00", "00:00", "https://i.pinimg.com/564x/c8/eb/b9/c8ebb90a996a81b2eb4dba2b1bec93c6.jpg", 1950.00, "https://www.mercadopago.com.mx/paid?&utm_source=google&utm_medium=cpc&utm_campaign=MLM_MP_G_AO_GEN_ALL_BRAND_ALL_CONV_EXACT&matt_tool=53751208&matt_word=&gclid=CjwKCAjwpqCZBhAbEiwAa7pXeWwrWSV-hlxBJNvNNyWXAMTKafKXwTcqu_X9qfdKSdiBNbTgx68uRBoC7SUQAvD_BwE"));
-            listEventData.Add(new EventData("Anuel AA, Leyendas tour", "Podcast", "Arena Monterrey", "27 Diciembre 2022", "20:00", "00:00", "https://i.pinimg.com/564x/c8/eb/b9/c8ebb90a996a81b2eb4dba2b1bec93c6.jpg", 1950.00, "https://www.mercadopago.com.mx/paid?&utm_source=google&utm_medium=cpc&utm_campaign=MLM_MP_G_AO_GEN_ALL_BRAND_ALL_CONV_EXACT&matt_tool=53751208&matt_word=&gclid=CjwKCAjwpqCZBhAbEiwAa7pXeWwrWSV-hlxBJNvNNyWXAMTKafKXwTcqu_X9qfdKSdiBNbTgx68uRBoC7SUQAvD_BwE"));
-            if (listEventData != null || listEventData.Count >= 1) {
-                foreach (EventData eventData in listEventData) {
-                    if (eventData.Category.Equals(category))
-                    {
-                        listEventDataFilterCategory.Add(eventData);
-                    }
-                }
-            }
+            List<EventData> listEventDataFilterCategory = DataManager.RealmInstance.All<EventData>().Where(w => w.Category == category).ToList<EventData>();          
             ListEventAdapter adapter = new ListEventAdapter(this, listEventDataFilterCategory);
             eventGridView.Adapter = adapter;      
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            ListEventAdapter adapter = ((ListEventAdapter)eventGridView.Adapter);
+            List<EventData> listEventDataFilterCategory = DataManager.RealmInstance.All<EventData>().Where(w => w.Category == category).ToList<EventData>();
+            adapter.RefillItems(listEventDataFilterCategory);
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
         }
     }
 }

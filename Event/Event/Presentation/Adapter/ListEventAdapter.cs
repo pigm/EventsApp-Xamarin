@@ -8,6 +8,7 @@ using Event.Commons.Utils;
 using Event.Event.Data;
 using Event.Event.Presentation.Activity;
 using Newtonsoft.Json;
+using static Android.Content.ClipData;
 
 namespace Event.Event.Presentation.Adapter
 {
@@ -32,6 +33,12 @@ namespace Event.Event.Presentation.Adapter
         public override long GetItemId(int position)
         {
             return position;
+        }
+
+        public void RefillItems(List<EventData> items)
+        {
+            this.eventData = items;     
+            NotifyDataSetChanged();
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)

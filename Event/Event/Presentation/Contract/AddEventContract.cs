@@ -5,7 +5,8 @@ namespace Event.Event.Presentation.Contract
     {
         public interface View
         {
-            void setData();
+            void CreateEventObject();
+            void AddPersistentData();
         }
 
         public interface Presenter

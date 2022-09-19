@@ -12,6 +12,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Event.Commons;
 using Event.Commons.Utils;
 using Event.Event.Data;
 using Event.Event.Presentation.Contract;
@@ -62,9 +63,10 @@ namespace Event.Event.Presentation.Activity
             categoryEditText.Text = category;
             categoryEditText.Enabled = false;
             categoryEditText.Focusable = false;
+            addButton.Click += delegate { CreateEventObject(); };
         }
 
-        public void setData()
+        public void CreateEventObject()
         {
             if (!validateEditText())
             {
@@ -73,10 +75,28 @@ namespace Event.Event.Presentation.Activity
             }
             else
             {
-                EventData eventData = new EventData(titleEditText.Text, category, addressEditText.Text,
-                    dateEditText.Text, startTimeEditText.Text, endTimeEditText.Text, imageUrleEditText.Text,
-                    Double.Parse(priceEditText.Text), urlPaymentEditText.Text);
+                AddPersistentData();
+                Finish();
             }
+        }
+
+        public void AddPersistentData() {
+            DataManager.RealmInstance.Write(() =>
+            {               
+                EventData eventData = new EventData
+                {
+                    Title = titleEditText.Text,
+                    Category = category,
+                    Address = addressEditText.Text,
+                    Date = dateEditText.Text,
+                    StartTime = startTimeEditText.Text,
+                    EndTime = endTimeEditText.Text,
+                    ImageUrl = imageUrleEditText.Text,
+                    Price = Double.Parse(priceEditText.Text),
+                    UrlPago = urlPaymentEditText.Text
+                };
+                DataManager.RealmInstance.Add(eventData);
+            });
         }
 
         private bool validateEditText()
@@ -90,6 +110,8 @@ namespace Event.Event.Presentation.Activity
             }
             return false;
         }
+
+        
     }
 }
 

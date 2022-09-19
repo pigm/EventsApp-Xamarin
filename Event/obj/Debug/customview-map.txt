@@ -46,6 +46,8 @@ resources;/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug
 resources;obj/Debug/res/values/colors.xml
 resources;obj/Debug/res/values/strings.xml
 resources;obj/Debug/res/values/styles.xml
+ScrollView;obj/Debug/res/layout/activity_add_event.xml
+ScrollView;obj/Debug/res/layout/activity_detail_event.xml
 string;/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/lp/0/jl/res/values/values.xml
 string;obj/Debug/res/values/strings.xml
 style;obj/Debug/res/values/styles.xml

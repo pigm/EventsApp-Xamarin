@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Event.Commons;
 using Event.Commons.Utils;
 using Event.Event.Data;
 using Newtonsoft.Json;
@@ -24,7 +25,7 @@ namespace Event.Event.Presentation.Activity
     public class EventDetailActivity : AppCompatActivity, BaseActivity
     {
         private EventData eventData;
-        Button paymentDetailButton;
+        Button paymentDetailButton, deleteEventButton;
         ImageView eventDetailImage, backImage;
         TextView titleEventDetailText, dayDetailText, monthDetailText, startTimeDetailText,
             endTimeDetailText, addressEventDetailText, priceEventDetailText, titleToolbarText;
@@ -50,6 +51,7 @@ namespace Event.Event.Presentation.Activity
             addressEventDetailText = (TextView)FindViewById(Resource.Id.addressEventDetailText);
             priceEventDetailText = (TextView)FindViewById(Resource.Id.priceEventDetailText);
             paymentDetailButton = (Button)FindViewById(Resource.Id.paymentDetailButton);
+            deleteEventButton = (Button)FindViewById(Resource.Id.deleteEventButton);
         }
 
         public void InitView()
@@ -67,12 +69,40 @@ namespace Event.Event.Presentation.Activity
 
             var price = String.Format("{0:N0}", eventData.Price);
             priceEventDetailText.Text = "$" + price;
-            paymentDetailButton.Click += delegate {
+            paymentDetailButton.Click += delegate
+            {
                 Android.Net.Uri uri = Android.Net.Uri.Parse(eventData.UrlPago);
                 Intent i = new Intent(Intent.ActionView);
                 i.SetData(uri);
                 StartActivity(i);
             };
+            deleteEventButton.Click += delegate
+            {
+                DeleteEvent();
+                OnBackPressed();           
+            };
+        }
+
+        private void DeleteEvent()
+        {
+            var eventDelete = DataManager.RealmInstance.All<EventData>().Where(w => w.Title == eventData.Title).ToList<EventData>();
+            if (eventDelete.Any())
+            {
+                foreach (EventData itemDelete in eventDelete)
+                {
+                    using (var trans = DataManager.RealmInstance.BeginWrite())
+                    {
+                        DataManager.RealmInstance.Remove(itemDelete);
+                        trans.Commit();
+                    }
+                }
+
+            }
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
         }
     }
 }

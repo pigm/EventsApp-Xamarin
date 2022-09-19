@@ -1,9 +1,10 @@
 ﻿using System;
 using Android.OS;
+using Realms;
 
 namespace Event.Event.Data
 {
-    public class EventData
+    public class EventData: RealmObject
     {
         public string Title { get; set; }
         public string Category { get; set; }
@@ -13,20 +14,7 @@ namespace Event.Event.Data
         public string EndTime { get; set; }        
         public string ImageUrl { get; set; }
         public double Price { get; set; }
-        public string UrlPago { get; set; }
-
-        public EventData(string title, string category, string address, string date, string startTime, string endTime, string imageUrl, double price, string urlPago)
-        {
-            this.Title = title;
-            this.Category = category;
-            this.Address = address;
-            this.Date = date;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
-            this.ImageUrl = imageUrl;
-            this.Price = price;
-            this.UrlPago = urlPago;
-        }
+        public string UrlPago { get; set; }       
     }
 }
 

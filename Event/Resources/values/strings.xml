@@ -11,6 +11,7 @@
 	<string name="events">Eventos</string>
 	<string name="events_detail">Detalle evento</string>
 	<string name="add_event">Agregar evento</string>
+	<string name="delete_event">Eliminar evento</string>
 	<string name="payment">PAGAR</string>
 	<string name="title">Titulo evento</string>
 	<string name="address">Dirección</string>
