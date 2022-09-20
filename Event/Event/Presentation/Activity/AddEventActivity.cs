@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 using Android.App;
@@ -11,24 +12,32 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using Event.Commons;
 using Event.Commons.Utils;
 using Event.Event.Data;
 using Event.Event.Presentation.Contract;
+using static Android.App.DatePickerDialog;
 
 namespace Event.Event.Presentation.Activity
 {
     [Activity(Label = "AddEventActivity", Theme = "@style/ThemeNoActionBar", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize |
            Android.Content.PM.ConfigChanges.Orientation,
            ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class AddEventActivity : AppCompatActivity, BaseActivity, AddEventContract.View
+    public class AddEventActivity : AppCompatActivity, BaseActivity, AddEventContract.View, IOnDateSetListener
     {
+        private string URL_MERCADO_PAGO = "https://www.mercadopago.com.mx/paid?&utm_source=google&utm_medium=cpc&utm_campaign=MLM_MP_G_AO_GEN_ALL_BRAND_ALL_CONV_EXACT&matt_tool=53751208&matt_word=&gclid=CjwKCAjwpqCZBhAbEiwAa7pXeWwrWSV-hlxBJNvNNyWXAMTKafKXwTcqu_X9qfdKSdiBNbTgx68uRBoC7SUQAvD_BwE";
         Button addButton;
         ImageView backImage;
         TextView titleToolbarText;
         TextInputEditText titleEditText, categoryEditText, addressEditText, dateEditText, startTimeEditText,
             endTimeEditText, imageUrleEditText, urlPaymentEditText, priceEditText;
+
+        int codeFecha;
+        int year = DateTime.Now.Year;
+        int mes = DateTime.Now.Month;
+        int dia = DateTime.Now.Day;
         string category;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -63,6 +72,8 @@ namespace Event.Event.Presentation.Activity
             categoryEditText.Text = category;
             categoryEditText.Enabled = false;
             categoryEditText.Focusable = false;
+            urlPaymentEditText.Text = URL_MERCADO_PAGO;
+            dateEditText.Touch += delegate { ShowDialog(1); };
             addButton.Click += delegate { CreateEventObject(); };
         }
 
@@ -109,9 +120,32 @@ namespace Event.Event.Presentation.Activity
                 return true;
             }
             return false;
+        }     
+
+        protected override Dialog OnCreateDialog(int id)
+        {
+            HideKeyboard(titleEditText);
+            HideKeyboard(addressEditText);
+            HideKeyboard(startTimeEditText);
+            HideKeyboard(endTimeEditText);
+            HideKeyboard(imageUrleEditText);
+            HideKeyboard(urlPaymentEditText);
+            HideKeyboard(priceEditText);          
+            var datePickerFechaElaboracion = new DatePickerDialog(this, this, year, mes, dia);
+            datePickerFechaElaboracion.DatePicker.MaxDate = GeneralUtils.SetMaxDate(185);
+            datePickerFechaElaboracion.DatePicker.MinDate = GeneralUtils.SetMinDate();
+            return datePickerFechaElaboracion;
         }
 
-        
+        public void HideKeyboard(TextInputEditText editText)
+        {
+            InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            inputMethodManager.HideSoftInputFromWindow(editText.WindowToken, 0);
+        }
+
+        public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
+        {
+            dateEditText.Text = GeneralUtils.DateFormat(year, month, dayOfMonth);
+        }        
     }
 }
-

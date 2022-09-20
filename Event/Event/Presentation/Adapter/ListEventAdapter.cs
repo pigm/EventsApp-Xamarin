@@ -56,19 +56,13 @@ namespace Event.Event.Presentation.Adapter
             TextView priceEventText = (TextView)convertView.FindViewById(Resource.Id.priceEventText);
 
             GeneralUtils.LoadImageFromWebOperations(eventImage, eventData[position].ImageUrl);
-            dayText.Text = "20"; // eventData[position].Date;
-            monthText.Text = "Dic"; //eventData[position].Date;
+            dayText.Text = eventData[position].Date.Substring(0, 2);
+            monthText.Text = eventData[position].Date.Substring(3, 3);
             titleEventText.Text = eventData[position].Title;
             addressEventText.Text = eventData[position].Address;
             var price = String.Format("{0:N0}", eventData[position].Price);
-            priceEventText.Text = "$" + price;
+            priceEventText.Text = "$" + price + ".00 MXN";
 
-            convertView.Click += delegate
-            {
-                Intent goToDetailEvent = new Intent(context, typeof(EventDetailActivity));
-                goToDetailEvent.PutExtra("EVENT", JsonConvert.SerializeObject(eventData[position]));
-                context.StartActivity(goToDetailEvent);
-            };
             return convertView;
         }
     }

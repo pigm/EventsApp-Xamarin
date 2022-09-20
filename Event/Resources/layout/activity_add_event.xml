@@ -34,6 +34,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/title"
+				android:maxLength="60"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -46,7 +47,7 @@
 			<android.support.design.widget.TextInputEditText
 				android:id="@+id/categoryEditText"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content" />
+				android:layout_height="wrap_content"/>
 		</android.support.design.widget.TextInputLayout>
 
 		<android.support.design.widget.TextInputLayout
@@ -60,6 +61,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/address"
+				android:maxLength="70"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -88,6 +90,8 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/start_time"
+				android:inputType="time"
+				android:maxLength="5"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -102,6 +106,8 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/end_time"
+				android:inputType="time"
+				android:maxLength="5"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -116,6 +122,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/image_url"
+				android:inputType="textUri"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -130,6 +137,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/url_payment"
+				android:inputType="textUri"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 
@@ -144,6 +152,8 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:hint="@string/price"
+				android:inputType="number"
+				android:maxLength="7"
 				android:imeOptions="actionNext"/>
 		</android.support.design.widget.TextInputLayout>
 

@@ -30,10 +30,12 @@
 				android:id="@+id/titleEventDetailText"
 				android:textColor="@android:color/black"
 				android:textFontWeight="900"
-				android:textSize="16sp"
+				android:textStyle="bold"
+				android:textSize="24sp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_margin="16dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp"
 				tools:text="VIVALDI: Cuatro Estaciones | Orquesta Solistas de América"/>
 			<LinearLayout
 				android:orientation="horizontal"
@@ -56,7 +58,7 @@
 					<TextView
 						android:id="@+id/monthDetailText"
 						android:textFontWeight="900"
-						android:textSize="24dp"
+						android:textSize="18dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginStart="16dp"
@@ -79,15 +81,15 @@
 						<TextView
 							android:id="@+id/startTimeDetailText"
 							android:textFontWeight="900"
-							android:textSize="14sp"
-							android:layout_width="35.4dp"
+							android:textSize="16sp"
+							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:maxLines="1"
 							android:ellipsize="end"
 							tools:text="18:00"/>
 						<TextView
 							android:textFontWeight="900"
-							android:textSize="14sp"
+							android:textSize="16sp"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:maxLines="1"
@@ -97,7 +99,7 @@
 						<TextView
 							android:id="@+id/endTimeDetailText"
 							android:textFontWeight="900"
-							android:textSize="14sp"
+							android:textSize="16sp"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							tools:text="00:00"/>
@@ -107,16 +109,13 @@
 					<TextView
 						android:id="@+id/addressEventDetailText"
 						android:textFontWeight="900"
-						android:textSize="14sp"
+						android:textSize="16sp"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginStart="16dp"
 						android:layout_marginEnd="16dp"
 						android:layout_marginBottom="16dp"
 						tools:text="Teatro José Pablo Moncayo - PALCCO Teatro José Pablo Moncayo - PALCCO Teatro José Pablo Moncayo - PALCCO"/>
-
-
-
 				</LinearLayout>
 			</LinearLayout>
 			<TextView
@@ -136,10 +135,11 @@
 				android:textStyle="bold"
 				android:textColor="@android:color/white"
 				android:background="@color/colorAccent"
-				android:textSize="18dp"
+				android:textSize="16dp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_margin="16dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp"
 				android:text="@string/payment"/>
 			<Button
 				android:id="@+id/deleteEventButton"
@@ -147,7 +147,7 @@
 				android:textStyle="bold"
 				android:textColor="@color/colorAccent"
 				android:background="@color/colorPrimaryDark"
-				android:textSize="18dp"
+				android:textSize="16dp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="16dp"
@@ -155,4 +155,3 @@
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>
-

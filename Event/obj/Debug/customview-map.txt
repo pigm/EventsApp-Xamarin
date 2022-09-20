@@ -8,6 +8,7 @@ attr;/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/lp/1
 Button;obj/Debug/res/layout/activity_add_event.xml
 Button;obj/Debug/res/layout/activity_detail_event.xml
 Button;obj/Debug/res/layout/activity_list_event.xml
+Button;obj/Debug/res/layout/item_card_event.xml
 clip-path;obj/Debug/res/drawable/ic_logo.xml
 color;obj/Debug/res/values/colors.xml
 com.airbnb.lottie.LottieAnimationView;obj/Debug/res/layout/activity_main.xml

@@ -61,14 +61,14 @@ namespace Event.Event.Presentation.Activity
             titleToolbarText.Text = GetString(Resource.String.events_detail);
             GeneralUtils.LoadImageFromWebOperations(eventDetailImage, eventData.ImageUrl);
             titleEventDetailText.Text = eventData.Title;
-            dayDetailText.Text = "21"; // eventData.Date;
-            monthDetailText.Text = "DIC"; // eventData.Date;
-            startTimeDetailText.Text = eventData.StartTime;
+            dayDetailText.Text = eventData.Date.Substring(0, 2);
+            monthDetailText.Text = eventData.Date.Substring(3, 3);
+            startTimeDetailText.Text = "De " + eventData.StartTime;
             endTimeDetailText.Text = eventData.EndTime;
             addressEventDetailText.Text = eventData.Address;
 
             var price = String.Format("{0:N0}", eventData.Price);
-            priceEventDetailText.Text = "$" + price;
+            priceEventDetailText.Text = "$" + price + ".00 MXN";
             paymentDetailButton.Click += delegate
             {
                 Android.Net.Uri uri = Android.Net.Uri.Parse(eventData.UrlPago);
@@ -106,4 +106,3 @@ namespace Event.Event.Presentation.Activity
         }
     }
 }
-

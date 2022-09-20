@@ -22,5 +22,5 @@
 	<string name="price">Precio</string>
 	<string name="url_payment">Url metodo pago</string>
 	<string name="category">Categoría</string>
-	<string name="input_empty">Ingresa todos los campos, por favor</string>
+	<string name="input_empty">Ingresa todos los campos, por favor</string>	
 </resources>

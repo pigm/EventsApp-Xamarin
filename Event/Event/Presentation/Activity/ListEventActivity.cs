@@ -22,13 +22,17 @@ using static Android.Provider.CalendarContract;
 using static Android.Icu.Text.Transliterator;
 using Event.Commons;
 using static Android.Support.V7.Widget.RecyclerView;
+using System.Runtime.Remoting.Contexts;
+using Org.Json;
+using Event.Event.Presentation.Contract;
+using Android.Views.InputMethods;
 
 namespace Event.Event.Presentation.Activity
 {
     [Activity(Label = "ListEventActivity", Theme = "@style/ThemeNoActionBar", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize |
             Android.Content.PM.ConfigChanges.Orientation,
             ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class ListEventActivity : AppCompatActivity, BaseActivity
+    public class ListEventActivity : AppCompatActivity, BaseActivity, ListEventContract.View
     {
         Button addEventButton;
         GridView eventGridView;
@@ -57,15 +61,16 @@ namespace Event.Event.Presentation.Activity
         {
             category = Intent.GetStringExtra("CATEGORY");
             addEventButton.Click += delegate {
-                Intent goToAddEventActivity = new Intent(this, typeof(AddEventActivity));
-                goToAddEventActivity.PutExtra("CATEGORY", category);
-                StartActivity(goToAddEventActivity);
+                GoToAddEvent();
             };
             backImage.Click += delegate { OnBackPressed(); };
             titleToolbarText.Text = GetString(Resource.String.events);
             List<EventData> listEventDataFilterCategory = DataManager.RealmInstance.All<EventData>().Where(w => w.Category == category).ToList<EventData>();          
             ListEventAdapter adapter = new ListEventAdapter(this, listEventDataFilterCategory);
-            eventGridView.Adapter = adapter;      
+            eventGridView.Adapter = adapter;
+            eventGridView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args) {
+                GoToEventDetail(JsonConvert.SerializeObject(listEventDataFilterCategory[args.Position]));
+            };
         }
 
         protected override void OnResume()
@@ -79,6 +84,18 @@ namespace Event.Event.Presentation.Activity
         public override void OnBackPressed()
         {
             base.OnBackPressed();
+        }
+
+        private void GoToAddEvent() {
+            Intent goToAddEventActivity = new Intent(this, typeof(AddEventActivity));
+            goToAddEventActivity.PutExtra("CATEGORY", category);
+            StartActivity(goToAddEventActivity);
+        }
+
+        private void GoToEventDetail(string jsonObject) {
+            Intent goToDetailEvent = new Intent(this, typeof(EventDetailActivity));
+            goToDetailEvent.PutExtra("EVENT", jsonObject);
+            StartActivity(goToDetailEvent);
         }
     }
 }

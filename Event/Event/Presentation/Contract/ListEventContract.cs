@@ -8,7 +8,7 @@ namespace Event.Event.Presentation.Contract
     {
         public interface View
         {
-
+     
         }
 
         public interface Presenter
