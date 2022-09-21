@@ -8,12 +8,28 @@
 	<include
 		layout="@layout/toolbar"/>
 
-	<TextView
+	<LinearLayout
+		android:orientation="horizontal"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="16dp"
-		android:text="@string/subtitle_event"
-		android:textSize="16dp"/>
+		android:layout_height="wrap_content">
+		<ImageView
+			android:id="@+id/categoryImage"
+			android:layout_width="38dp"
+			android:layout_height="38dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="22dp"
+			android:layout_marginBottom="10dp"
+			android:contentDescription="@string/app_name"
+			android:src="@drawable/ic_concert"/>
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:text="@string/subtitle_event"
+			android:textSize="16dp"/>
+	</LinearLayout>
+
+
 	<Button
 		android:id="@+id/addEventButton"
 		android:textFontWeight="900"

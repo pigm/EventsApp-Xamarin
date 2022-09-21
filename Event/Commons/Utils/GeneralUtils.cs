@@ -19,7 +19,6 @@ namespace Event.Commons.Utils
                 delegate { return true; }
             );
             var imageBytes = client.DownloadData(uri);
-
             Bitmap imageBitmap;
             if (imageBytes != null && imageBytes.Length > 0)
             {

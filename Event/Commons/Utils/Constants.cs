@@ -9,7 +9,7 @@ namespace Event.Commons.Utils
         public static string FIFA_WORLD_CUP = "Fifa world cup 2022";
         public static string THEATER = "Festivales de teatro";
         public static string STANDUP = "StandUp";
-        public static string LOLLAPALOZA = "Lollapaloza2023";
+        public static string LOLLAPALOZA = "Lollapaloza 2023";
     }
 }
 

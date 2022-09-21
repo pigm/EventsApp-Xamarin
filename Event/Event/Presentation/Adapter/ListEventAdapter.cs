@@ -61,7 +61,7 @@ namespace Event.Event.Presentation.Adapter
             titleEventText.Text = eventData[position].Title;
             addressEventText.Text = eventData[position].Address;
             var price = String.Format("{0:N0}", eventData[position].Price);
-            priceEventText.Text = "$" + price + ".00 MXN";
+            priceEventText.Text = "$" + price + ".00 MXN"; 
 
             return convertView;
         }

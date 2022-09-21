@@ -307,3 +307,9 @@
 /Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/stamp/_GenerateJavaStubs.stamp
 /Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
+/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/res/drawable/ic_other.xml
+/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/res/drawable/ic_concert.xml
+/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/res/drawable/ic_standup.xml
+/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/res/drawable/ic_culture.xml
+/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/res/drawable/ic_fest.xml
+/Users/pablogarrido/Documents/GitHub/EventsApp-Xamarin/Event/obj/Debug/res/drawable/ic_sport.xml

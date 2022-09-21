@@ -36,7 +36,7 @@ namespace Event.Event.Presentation.Activity
     {
         Button addEventButton;
         GridView eventGridView;
-        ImageView backImage;
+        ImageView backImage, categoryImage;
         TextView titleToolbarText;
         ListEventPresenter presenter = ListEventPresenter.Instance;
         string category;
@@ -54,6 +54,7 @@ namespace Event.Event.Presentation.Activity
             addEventButton = (Button)FindViewById(Resource.Id.addEventButton);
             eventGridView = (GridView) FindViewById(Resource.Id.eventGridView);
             backImage = (ImageView)FindViewById(Resource.Id.backImage);
+            categoryImage = (ImageView)FindViewById(Resource.Id.categoryImage);
             titleToolbarText = (TextView)FindViewById(Resource.Id.titleToolbarText);
         }
 
@@ -64,7 +65,7 @@ namespace Event.Event.Presentation.Activity
                 GoToAddEvent();
             };
             backImage.Click += delegate { OnBackPressed(); };
-            titleToolbarText.Text = GetString(Resource.String.events);
+            titleToolbarText.Text = category;
             List<EventData> listEventDataFilterCategory = DataManager.RealmInstance.All<EventData>().Where(w => w.Category == category).ToList<EventData>();          
             ListEventAdapter adapter = new ListEventAdapter(this, listEventDataFilterCategory);
             eventGridView.Adapter = adapter;
