@@ -1,31 +1,17 @@
 ﻿<Properties StartupConfiguration="{5310E991-9275-4158-AD4A-34E381134253}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_33_x86_64" />
-  <MonoDevelop.Ide.ItemProperties.App.Event PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" AndroidDesignerPreferredDevice="pixel_3a_xl" AndroidDesignerPreferredTheme="AppTheme" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Event/Presentation/Activity/EventDetailActivity.cs">
+  <MonoDevelop.Ide.ItemProperties.App.Event PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" AndroidDesignerPreferredTheme="AppTheme" AndroidDesignerPreferredDevice="pixel_3a_xl" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Event/Presentation/Activity/ListEventActivity.cs">
     <Files>
-      <File FileName="Event/Resources/layout/activity_add_event.xml" Line="64" Column="25" />
-      <File FileName="Event/Event/Presentation/Activity/AddEventActivity.cs" Line="30" Column="295" />
-      <File FileName="Event/Event/Presentation/Contract/AddEventContract.cs" Line="13" Column="48" />
-      <File FileName="Event/Event/Presentation/Contract/ListEventContract.cs" Line="11" Column="6" />
-      <File FileName="Event/Resources/values/strings.xml" Line="25" Column="73" />
-      <File FileName="Event/Home/Presentation/Adapter/HomeAdapter.cs" Line="55" Column="86" />
-      <File FileName="Event/Event/Presentation/Activity/ListEventActivity.cs" Line="97" Column="59" />
-      <File FileName="Event/Event/Presentation/Activity/EventDetailActivity.cs" Line="64" Column="65" />
-      <File FileName="Event/Home/Presentation/Presenter/HomePresenter.cs" Line="31" Column="61" />
-      <File FileName="Event/Event/Presentation/Presenter/ListEventPresenter.cs" Line="1" Column="1" />
-      <File FileName="Event/Commons/Utils/Constants.cs" Line="8" Column="48" />
-      <File FileName="Event/Commons/DataManager.cs" Line="31" Column="53" />
-      <File FileName="Event/Event/Data/EventData.cs" Line="7" Column="18" />
-      <File FileName="Event/Resources/layout/activity_detail_event.xml" Line="45" Column="2" />
-      <File FileName="Event/Event/Presentation/Adapter/ListEventAdapter.cs" Line="57" Column="1" />
-      <File FileName="Event/Commons/Utils/GeneralUtils.cs" Line="10" Column="30" />
-      <File FileName="Event/Resources/layout/item_card_event.xml" Line="96" Column="30" />
-      <File FileName="Event/Home/Presentation/Activity/HomeActivity.cs" Line="1" Column="1" />
+      <File FileName="Event/Event/Presentation/Activity/ListEventActivity.cs" Line="75" Column="74" />
+      <File FileName="Event/Event/Presentation/Presenter/ListEventPresenter.cs" Line="28" Column="22" />
+      <File FileName="Event/Event/Presentation/Contract/ListEventContract.cs" Line="18" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,25 +19,10 @@
           <Node name="Event" expanded="True">
             <Node name="App" expanded="True">
               <Node name="Event" expanded="True">
-                <Node name="Assets" expanded="True" />
                 <Node name="Commons" expanded="True">
                   <Node name="Utils" expanded="True" />
                 </Node>
                 <Node name="Event" expanded="True">
-                  <Node name="Data" expanded="True" />
-                  <Node name="Presentation" expanded="True">
-                    <Node name="Activity" expanded="True">
-                      <Node name="EventDetailActivity.cs" selected="True" />
-                    </Node>
-                    <Node name="Adapter" expanded="True" />
-                    <Node name="Contract" expanded="True" />
-                    <Node name="Presenter" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="Home" expanded="True">
-                  <Node name="Data" expanded="True">
-                    <Node name="Model" expanded="True" />
-                  </Node>
                   <Node name="Presentation" expanded="True">
                     <Node name="Activity" expanded="True" />
                     <Node name="Adapter" expanded="True" />
@@ -62,11 +33,6 @@
                 <Node name="Resources" expanded="True">
                   <Node name="layout" expanded="True" />
                   <Node name="values" expanded="True" />
-                </Node>
-                <Node name="Splash" expanded="True">
-                  <Node name="Presentation" expanded="True">
-                    <Node name="Activity" expanded="True" />
-                  </Node>
                 </Node>
               </Node>
             </Node>
@@ -79,5 +45,4 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
-  <MultiItemStartupConfigurations />
 </Properties>

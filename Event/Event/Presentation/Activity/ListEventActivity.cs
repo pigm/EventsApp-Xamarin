@@ -72,6 +72,7 @@ namespace Event.Event.Presentation.Activity
             eventGridView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args) {
                 GoToEventDetail(JsonConvert.SerializeObject(listEventDataFilterCategory[args.Position]));
             };
+            presenter.ShowIconForCategory(category, categoryImage, this);
         }
 
         protected override void OnResume()
@@ -97,6 +98,6 @@ namespace Event.Event.Presentation.Activity
             Intent goToDetailEvent = new Intent(this, typeof(EventDetailActivity));
             goToDetailEvent.PutExtra("EVENT", jsonObject);
             StartActivity(goToDetailEvent);
-        }
+        }     
     }
 }
