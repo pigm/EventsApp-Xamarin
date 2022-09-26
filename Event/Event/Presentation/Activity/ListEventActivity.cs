@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -26,6 +25,9 @@ using System.Runtime.Remoting.Contexts;
 using Org.Json;
 using Event.Event.Presentation.Contract;
 using Android.Views.InputMethods;
+using Event.Event.Domain.Model;
+using System.Reflection;
+using static Android.Service.Carrier.CarrierMessagingService;
 
 namespace Event.Event.Presentation.Activity
 {
@@ -34,6 +36,8 @@ namespace Event.Event.Presentation.Activity
             ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ListEventActivity : AppCompatActivity, BaseActivity, ListEventContract.View
     {
+        private List<EventDomain> listEventDataFilterCategory;
+        private ListEventAdapter adapter;
         Button addEventButton;
         GridView eventGridView;
         ImageView backImage, categoryImage;
@@ -66,23 +70,16 @@ namespace Event.Event.Presentation.Activity
             };
             backImage.Click += delegate { OnBackPressed(); };
             titleToolbarText.Text = category;
-            List<EventData> listEventDataFilterCategory = DataManager.RealmInstance.All<EventData>().Where(w => w.Category == category).ToList<EventData>();          
-            ListEventAdapter adapter = new ListEventAdapter(this, listEventDataFilterCategory);
+
+            listEventDataFilterCategory = presenter.GetListEvent(category);
+            adapter = new ListEventAdapter(this, listEventDataFilterCategory);
             eventGridView.Adapter = adapter;
             eventGridView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args) {
-                GoToEventDetail(JsonConvert.SerializeObject(listEventDataFilterCategory[args.Position]));
+                GoToEventDetail(JsonConvert.SerializeObject(presenter.SetObjectTransfer(listEventDataFilterCategory[args.Position])));
             };
             presenter.ShowIconForCategory(category, categoryImage, this);
         }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
-            ListEventAdapter adapter = ((ListEventAdapter)eventGridView.Adapter);
-            List<EventData> listEventDataFilterCategory = DataManager.RealmInstance.All<EventData>().Where(w => w.Category == category).ToList<EventData>();
-            adapter.RefillItems(listEventDataFilterCategory);
-        }
-
+      
         public override void OnBackPressed()
         {
             base.OnBackPressed();
@@ -91,13 +88,28 @@ namespace Event.Event.Presentation.Activity
         private void GoToAddEvent() {
             Intent goToAddEventActivity = new Intent(this, typeof(AddEventActivity));
             goToAddEventActivity.PutExtra("CATEGORY", category);
-            StartActivity(goToAddEventActivity);
+            StartActivityForResult(goToAddEventActivity, Constants.FROM_LIST_EVENT_TO_ADD);
         }
 
         private void GoToEventDetail(string jsonObject) {
             Intent goToDetailEvent = new Intent(this, typeof(EventDetailActivity));
             goToDetailEvent.PutExtra("EVENT", jsonObject);
-            StartActivity(goToDetailEvent);
-        }     
+            StartActivityForResult(goToDetailEvent, Constants.FROM_LIST_EVENT_TO_DETAIL);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            //adapter = ((ListEventAdapter)eventGridView.Adapter);
+            if (requestCode == Constants.FROM_LIST_EVENT_TO_ADD || requestCode == Constants.FROM_LIST_EVENT_TO_DETAIL)
+            {
+                RefreshAdapter();
+            }            
+        }
+
+        private void RefreshAdapter() {
+            listEventDataFilterCategory = presenter.GetListEvent(category);
+            adapter.RefillItems(listEventDataFilterCategory);
+        }
     }
 }

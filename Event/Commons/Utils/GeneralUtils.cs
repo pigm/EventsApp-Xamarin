@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Security;
+using Android.Content;
 using Android.Graphics;
 using Android.Widget;
 using Event.Event.Data;
+using Event.Event.Domain.Model;
 
 namespace Event.Commons.Utils
 {
     public class GeneralUtils
     {
-        public static void LoadImageFromWebOperations(ImageView imageView, string url)
+        public static Bitmap LoadImageFromWebOperations(string url)
         {
             var uri = new UriBuilder(url).Uri;
             var client = new WebClient();
@@ -18,13 +21,13 @@ namespace Event.Commons.Utils
             (
                 delegate { return true; }
             );
-            var imageBytes = client.DownloadData(uri);
-            Bitmap imageBitmap;
+            var imageBytes = client.DownloadData(uri);         
             if (imageBytes != null && imageBytes.Length > 0)
             {
-                imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                imageView.SetImageBitmap(imageBitmap);
+                return BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+
             }
+            return null;
         }
 
         public static long SetMaxDate(int days)
@@ -100,6 +103,34 @@ namespace Event.Commons.Utils
             }
 
             return daySelected + "/" + monthSelected + "/" + year;
+        }
+
+        public static void ValidateIconForCategory(string category, ImageView categoryImage, Context context)
+        {
+            if (category.Equals(Constants.CONCERTS) || category.Equals(Constants.LOLLAPALOZA))
+            {
+                categoryImage.SetImageDrawable(context.GetDrawable(Resource.Drawable.ic_concert));
+                return;
+            }
+            else if (category.Equals(Constants.FIFA_WORLD_CUP))
+            {
+                categoryImage.SetImageDrawable(context.GetDrawable(Resource.Drawable.ic_sport));
+                return;
+            }
+            else if (category.Equals(Constants.THEATER))
+            {
+                categoryImage.SetImageDrawable(context.GetDrawable(Resource.Drawable.ic_culture));
+                return;
+            }
+            else if (category.Equals(Constants.STANDUP))
+            {
+                categoryImage.SetImageDrawable(context.GetDrawable(Resource.Drawable.ic_standup));
+                return;
+            }
+            else
+            {
+                categoryImage.SetImageDrawable(context.GetDrawable(Resource.Drawable.ic_other));
+            }
         }
     }
 }

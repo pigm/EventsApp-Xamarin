@@ -13,6 +13,9 @@ event.event.presentation.activity.EventDetailActivity;crc644ef014cbc97a0f62.Even
 Event.Event.Presentation.Activity.AddEventActivity, Event;crc644ef014cbc97a0f62.AddEventActivity
 Event.Event.Presentation.Activity.AddEventActivity;crc644ef014cbc97a0f62.AddEventActivity
 event.event.presentation.activity.AddEventActivity;crc644ef014cbc97a0f62.AddEventActivity
+Event.Event.Presentation.Activity.UpdateEventActivity, Event;crc644ef014cbc97a0f62.UpdateEventActivity
+Event.Event.Presentation.Activity.UpdateEventActivity;crc644ef014cbc97a0f62.UpdateEventActivity
+event.event.presentation.activity.UpdateEventActivity;crc644ef014cbc97a0f62.UpdateEventActivity
 Event.Home.Presentation.Adapter.HomeAdapter, Event;crc649276dd7108988476.HomeAdapter
 Event.Home.Presentation.Adapter.HomeAdapter;crc649276dd7108988476.HomeAdapter
 event.home.presentation.adapter.HomeAdapter;crc649276dd7108988476.HomeAdapter

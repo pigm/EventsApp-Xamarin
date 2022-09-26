@@ -75,11 +75,18 @@
     <Compile Include="Event\Presentation\Presenter\ListEventPresenter.cs" />
     <Compile Include="Event\Presentation\Contract\ListEventContract.cs" />
     <Compile Include="Event\Presentation\Adapter\ListEventAdapter.cs" />
-    <Compile Include="Event\Data\EventData.cs" />
     <Compile Include="Event\Presentation\Activity\EventDetailActivity.cs" />
     <Compile Include="Event\Presentation\Activity\AddEventActivity.cs" />
     <Compile Include="Event\Presentation\Contract\AddEventContract.cs" />
-    <Compile Include="Commons\DataManager.cs" />
+    <Compile Include="Commons\Utils\DataManager.cs" />
+    <Compile Include="Event\Presentation\Presenter\EventDetailPresenter.cs" />
+    <Compile Include="Event\Presentation\Contract\EventDetailContract.cs" />
+    <Compile Include="Event\Presentation\Activity\UpdateEventActivity.cs" />
+    <Compile Include="Event\Domain\Model\EventDomain.cs" />
+    <Compile Include="Event\Data\Model\EventData.cs" />
+    <Compile Include="Event\Data\Mapper\EventToDomainMapper.cs" />
+    <Compile Include="Event\Data\Mapper\EventToDataMapper.cs" />
+    <Compile Include="Event\Domain\Model\EventTransferDomain.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -205,6 +212,22 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ic_maps.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ic_calendar.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\menu_event_options.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_update_event.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -229,6 +252,11 @@
     <Folder Include="Event\Presentation\Contract\" />
     <Folder Include="Event\Presentation\Presenter\" />
     <Folder Include="Resources\raw\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Event\Domain\" />
+    <Folder Include="Event\Domain\Model\" />
+    <Folder Include="Event\Data\Mapper\" />
+    <Folder Include="Event\Data\Model\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Support.Design">

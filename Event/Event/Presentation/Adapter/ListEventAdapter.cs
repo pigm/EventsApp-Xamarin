@@ -5,7 +5,7 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using Event.Commons.Utils;
-using Event.Event.Data;
+using Event.Event.Domain.Model;
 using Event.Event.Presentation.Activity;
 using Newtonsoft.Json;
 using static Android.Content.ClipData;
@@ -15,15 +15,15 @@ namespace Event.Event.Presentation.Adapter
     public class ListEventAdapter : BaseAdapter
     {
         Context context;
-        List<EventData> eventData;  
+        List<EventDomain> eventDomain;  
 
-        public ListEventAdapter(Context context, List<EventData> eventData)
+        public ListEventAdapter(Context context, List<EventDomain> eventDomain)
         {
             this.context = context;
-            this.eventData = eventData;
+            this.eventDomain = eventDomain;
         }
 
-        public override int Count => eventData.Count;
+        public override int Count => eventDomain.Count;
 
         public override Java.Lang.Object GetItem(int position)
         {
@@ -35,9 +35,9 @@ namespace Event.Event.Presentation.Adapter
             return position;
         }
 
-        public void RefillItems(List<EventData> items)
+        public void RefillItems(List<EventDomain> items)
         {
-            this.eventData = items;     
+            this.eventDomain = items;     
             NotifyDataSetChanged();
         }
 
@@ -55,12 +55,12 @@ namespace Event.Event.Presentation.Adapter
             TextView addressEventText = (TextView)convertView.FindViewById(Resource.Id.addressEventText);
             TextView priceEventText = (TextView)convertView.FindViewById(Resource.Id.priceEventText);
 
-            GeneralUtils.LoadImageFromWebOperations(eventImage, eventData[position].ImageUrl);
-            dayText.Text = eventData[position].Date.Substring(0, 2);
-            monthText.Text = eventData[position].Date.Substring(3, 3);
-            titleEventText.Text = eventData[position].Title;
-            addressEventText.Text = eventData[position].Address;
-            var price = String.Format("{0:N0}", eventData[position].Price);
+            eventImage.SetImageBitmap(eventDomain[position].ImageBitmap);
+            dayText.Text = eventDomain[position].Date.Substring(0, 2);
+            monthText.Text = eventDomain[position].Date.Substring(3, 3);
+            titleEventText.Text = eventDomain[position].Title;
+            addressEventText.Text = eventDomain[position].Address;
+            var price = String.Format("{0:N0}", eventDomain[position].Price);
             priceEventText.Text = "$" + price + ".00 MXN"; 
 
             return convertView;

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -14,7 +13,10 @@ using Android.Widget;
 using Event.Commons;
 using Event.Commons.Utils;
 using Event.Event.Data;
+using Event.Event.Presentation.Presenter;
 using Newtonsoft.Json;
+using Org.Json;
+using static Android.Content.ClipData;
 using static Android.Icu.Text.Transliterator;
 
 namespace Event.Event.Presentation.Activity
@@ -25,10 +27,13 @@ namespace Event.Event.Presentation.Activity
     public class EventDetailActivity : AppCompatActivity, BaseActivity
     {
         private EventData eventData;
-        Button paymentDetailButton, deleteEventButton;
-        ImageView eventDetailImage, backImage;
-        TextView titleEventDetailText, dayDetailText, monthDetailText, startTimeDetailText,
-            endTimeDetailText, addressEventDetailText, priceEventDetailText, titleToolbarText;
+        Button paymentDetailButton;
+        LinearLayout optionsButton;
+        ImageView eventDetailImage, backImage, optionsImage, categoryDetailImage;
+        TextView titleEventDetailText, dayDetailText, monthDetailText,
+            startTimeDetailText, endTimeDetailText, addressEventDetailText,
+            priceEventDetailText, titleToolbarText, categoryText;
+        EventDetailPresenter presenter = EventDetailPresenter.Instance;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,7 +45,11 @@ namespace Event.Event.Presentation.Activity
 
         public void InitComponentView()
         {
+            optionsButton = (LinearLayout)FindViewById(Resource.Id.optionsButton);
+            optionsImage = (ImageView)FindViewById(Resource.Id.optionsImage);
             backImage = (ImageView)FindViewById(Resource.Id.backImage);
+            categoryDetailImage = (ImageView)FindViewById(Resource.Id.categoryDetailImage);
+            categoryText = (TextView)FindViewById(Resource.Id.categoryText);
             titleToolbarText = (TextView)FindViewById(Resource.Id.titleToolbarText);
             eventDetailImage = (ImageView)FindViewById(Resource.Id.eventDetailImage);
             titleEventDetailText = (TextView)FindViewById(Resource.Id.titleEventDetailText);
@@ -51,36 +60,35 @@ namespace Event.Event.Presentation.Activity
             addressEventDetailText = (TextView)FindViewById(Resource.Id.addressEventDetailText);
             priceEventDetailText = (TextView)FindViewById(Resource.Id.priceEventDetailText);
             paymentDetailButton = (Button)FindViewById(Resource.Id.paymentDetailButton);
-            deleteEventButton = (Button)FindViewById(Resource.Id.deleteEventButton);
         }
 
         public void InitView()
         {
             eventData = JsonConvert.DeserializeObject<EventData>(Intent.GetStringExtra("EVENT"));
-            backImage.Click += delegate { Finish(); };
+            optionsButton.Visibility = ViewStates.Visible;
+            optionsImage.Click += delegate
+            {
+                ShowMenu();
+            };
+            backImage.Click += delegate
+            {
+                Finish();
+            };
             titleToolbarText.Text = GetString(Resource.String.events_detail);
-            GeneralUtils.LoadImageFromWebOperations(eventDetailImage, eventData.ImageUrl);
+            eventDetailImage.SetImageBitmap(GeneralUtils.LoadImageFromWebOperations(eventData.ImageUrl));
             titleEventDetailText.Text = eventData.Title;
             dayDetailText.Text = eventData.Date.Substring(0, 2);
             monthDetailText.Text = eventData.Date.Substring(3, 3);
             startTimeDetailText.Text = "De " + eventData.StartTime;
             endTimeDetailText.Text = eventData.EndTime;
             addressEventDetailText.Text = eventData.Address;
-
             var price = String.Format("{0:N0}", eventData.Price);
             priceEventDetailText.Text = "$" + price + ".00 MXN";
             paymentDetailButton.Click += delegate
             {
-                Android.Net.Uri uri = Android.Net.Uri.Parse(eventData.UrlPago);
-                Intent i = new Intent(Intent.ActionView);
-                i.SetData(uri);
-                StartActivity(i);
+                GoToUrlPayment();
             };
-            deleteEventButton.Click += delegate
-            {
-                DeleteEvent();
-                OnBackPressed();           
-            };
+            presenter.ShowIconForCategory(this, eventData.Category, categoryDetailImage, categoryText);
         }
 
         private void DeleteEvent()
@@ -97,12 +105,48 @@ namespace Event.Event.Presentation.Activity
                     }
                 }
 
-            }
+            }            
+            Toast.MakeText(this, GetString(Resource.String.message_detele_event), ToastLength.Short).Show();
+            Finish();
+        }
+
+        private void GoToUpdateEvent()
+        {
+            Intent goToUpdateEvent = new Intent(this, typeof(UpdateEventActivity));
+            goToUpdateEvent.PutExtra("EVENT", JsonConvert.SerializeObject(eventData));
+            StartActivity(goToUpdateEvent);
+        }
+
+        private void GoToUrlPayment()
+        {
+            Android.Net.Uri uri = Android.Net.Uri.Parse(eventData.UrlPago);
+            Intent i = new Intent(Intent.ActionView);
+            i.SetData(uri);
+            StartActivity(i);
         }
 
         public override void OnBackPressed()
         {
             base.OnBackPressed();
+        }
+
+        private void ShowMenu()
+        {
+            PopupMenu popupMenu = new PopupMenu(this, optionsImage);
+            popupMenu.Inflate(Resource.Menu.menu_event_options);
+            popupMenu.MenuItemClick += (s, arg) =>
+            {
+                switch (arg.Item.ItemId)
+                {
+                    case Resource.Id.delete:
+                        DeleteEvent();
+                        break;
+                    default:
+                        GoToUpdateEvent();
+                        break;
+                }
+            };
+            popupMenu.Show();
         }
     }
 }

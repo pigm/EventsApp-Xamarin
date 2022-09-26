@@ -27,18 +27,14 @@ namespace Event.Event.Presentation.Activity
            ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class AddEventActivity : AppCompatActivity, BaseActivity, AddEventContract.View, IOnDateSetListener
     {
+        private string category;
         private string URL_MERCADO_PAGO = "https://www.mercadopago.com.mx/paid?&utm_source=google&utm_medium=cpc&utm_campaign=MLM_MP_G_AO_GEN_ALL_BRAND_ALL_CONV_EXACT&matt_tool=53751208&matt_word=&gclid=CjwKCAjwpqCZBhAbEiwAa7pXeWwrWSV-hlxBJNvNNyWXAMTKafKXwTcqu_X9qfdKSdiBNbTgx68uRBoC7SUQAvD_BwE";
         Button addButton;
         ImageView backImage;
         TextView titleToolbarText;
-        TextInputEditText titleEditText, categoryEditText, addressEditText, dateEditText, startTimeEditText,
+        TextInputEditText titleEditText, categoryDetailEditText, addressEditText, dateEditText, startTimeEditText,
             endTimeEditText, imageUrleEditText, urlPaymentEditText, priceEditText;
-
-        int codeFecha;
-        int year = DateTime.Now.Year;
-        int mes = DateTime.Now.Month;
-        int dia = DateTime.Now.Day;
-        string category;
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,7 +50,7 @@ namespace Event.Event.Presentation.Activity
             backImage = (ImageView)FindViewById(Resource.Id.backImage);
             titleToolbarText = (TextView)FindViewById(Resource.Id.titleToolbarText);
             titleEditText = (TextInputEditText)FindViewById(Resource.Id.titleEditText);
-            categoryEditText = (TextInputEditText)FindViewById(Resource.Id.categoryEditText);
+            categoryDetailEditText = (TextInputEditText)FindViewById(Resource.Id.categoryDetailEditText);
             addressEditText = (TextInputEditText)FindViewById(Resource.Id.addressEditText);
             dateEditText = (TextInputEditText)FindViewById(Resource.Id.dateEditText);
             startTimeEditText = (TextInputEditText)FindViewById(Resource.Id.startTimeEditText);
@@ -69,9 +65,9 @@ namespace Event.Event.Presentation.Activity
             category = Intent.GetStringExtra("CATEGORY");
             backImage.Click += delegate { Finish(); };
             titleToolbarText.Text = GetString(Resource.String.add_event);
-            categoryEditText.Text = category;
-            categoryEditText.Enabled = false;
-            categoryEditText.Focusable = false;
+            categoryDetailEditText.Text = category.ToString();
+            categoryDetailEditText.Enabled = false;
+            categoryDetailEditText.Focusable = false;
             urlPaymentEditText.Text = URL_MERCADO_PAGO;
             dateEditText.Touch += delegate { ShowDialog(1); };
             addButton.Click += delegate { CreateEventObject(); };
@@ -131,7 +127,7 @@ namespace Event.Event.Presentation.Activity
             HideKeyboard(imageUrleEditText);
             HideKeyboard(urlPaymentEditText);
             HideKeyboard(priceEditText);          
-            var datePickerFechaElaboracion = new DatePickerDialog(this, this, year, mes, dia);
+            var datePickerFechaElaboracion = new DatePickerDialog(this, this, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             datePickerFechaElaboracion.DatePicker.MaxDate = GeneralUtils.SetMaxDate(185);
             datePickerFechaElaboracion.DatePicker.MinDate = GeneralUtils.SetMinDate();
             return datePickerFechaElaboracion;

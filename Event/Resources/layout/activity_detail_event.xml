@@ -17,6 +17,28 @@
 			android:layout_height="match_parent"
 			android:background="@android:color/white"
 			android:layout_margin="4dp">
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+				<ImageView
+					android:id="@+id/categoryDetailImage"
+					android:layout_width="38dp"
+					android:layout_height="38dp"
+					android:layout_marginStart="16dp"
+					android:layout_marginTop="22dp"
+					android:layout_marginBottom="10dp"
+					android:contentDescription="@string/app_name"
+					android:src="@drawable/ic_concert"/>
+				<TextView
+					android:id="@+id/categoryText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="16dp"
+					tools:text="Este evento pertenece a la categoria conciertos"
+					android:layout_gravity="center"
+					android:textSize="16dp"/>
+			</LinearLayout>
 			<ImageView
 				android:id="@+id/eventDetailImage"
 				android:layout_width="370dp"
@@ -71,12 +93,39 @@
 					android:orientation="vertical"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content">
-
 					<LinearLayout
 						android:orientation="horizontal"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_margin="16dp">
+						<ImageView
+							android:layout_width="24dp"
+							android:layout_height="24dp"
+							android:contentDescription="@string/app_name"
+							android:src="@drawable/ic_maps"
+							android:layout_gravity="center"/>
+						<TextView
+							android:id="@+id/addressEventDetailText"
+							android:textFontWeight="900"
+							android:textSize="16sp"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginStart="8dp"
+							tools:text="Teatro José Pablo Moncayo - PALCCO"/>
+					</LinearLayout>
+					<LinearLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="16dp"
+						android:layout_marginEnd="16dp"
+						android:layout_marginBottom="16dp">
+						<ImageView
+							android:layout_width="24dp"
+							android:layout_height="24dp"
+							android:contentDescription="@string/app_name"
+							android:src="@drawable/ic_calendar"
+							android:layout_gravity="center"/>
 
 						<TextView
 							android:id="@+id/startTimeDetailText"
@@ -85,6 +134,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:maxLines="1"
+							android:layout_marginStart="8dp"
 							android:ellipsize="end"
 							tools:text="18:00"/>
 						<TextView
@@ -105,17 +155,6 @@
 							tools:text="00:00"/>
 
 					</LinearLayout>
-
-					<TextView
-						android:id="@+id/addressEventDetailText"
-						android:textFontWeight="900"
-						android:textSize="16sp"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="16dp"
-						android:layout_marginEnd="16dp"
-						android:layout_marginBottom="16dp"
-						tools:text="Teatro José Pablo Moncayo - PALCCO Teatro José Pablo Moncayo - PALCCO Teatro José Pablo Moncayo - PALCCO"/>
 				</LinearLayout>
 			</LinearLayout>
 			<TextView
@@ -139,19 +178,9 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="16dp"
+				android:layout_marginTop="12dp"
 				android:layout_marginEnd="16dp"
 				android:text="@string/payment"/>
-			<Button
-				android:id="@+id/deleteEventButton"
-				android:textFontWeight="900"
-				android:textStyle="bold"
-				android:textColor="@color/colorAccent"
-				android:background="@color/colorPrimaryDark"
-				android:textSize="16dp"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="16dp"
-				android:text="@string/delete_event"/>
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>

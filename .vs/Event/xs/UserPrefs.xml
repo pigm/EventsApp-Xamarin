@@ -1,17 +1,16 @@
 ﻿<Properties StartupConfiguration="{5310E991-9275-4158-AD4A-34E381134253}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_33_x86_64" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_33_x86_64" />
-  <MonoDevelop.Ide.ItemProperties.App.Event PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" AndroidDesignerPreferredTheme="AppTheme" AndroidDesignerPreferredDevice="pixel_3a_xl" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Event/Presentation/Activity/ListEventActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Resources/layout/activity_list_event.xml">
     <Files>
-      <File FileName="Event/Event/Presentation/Activity/ListEventActivity.cs" Line="75" Column="74" />
-      <File FileName="Event/Event/Presentation/Presenter/ListEventPresenter.cs" Line="28" Column="22" />
-      <File FileName="Event/Event/Presentation/Contract/ListEventContract.cs" Line="18" Column="19" />
+      <File FileName="Event/Resources/layout/activity_update_event.xml" Line="98" Column="3" />
+      <File FileName="Event/Resources/layout/activity_list_event.xml" Line="45" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,19 +18,9 @@
           <Node name="Event" expanded="True">
             <Node name="App" expanded="True">
               <Node name="Event" expanded="True">
-                <Node name="Commons" expanded="True">
-                  <Node name="Utils" expanded="True" />
-                </Node>
-                <Node name="Event" expanded="True">
-                  <Node name="Presentation" expanded="True">
-                    <Node name="Activity" expanded="True" />
-                    <Node name="Adapter" expanded="True" />
-                    <Node name="Contract" expanded="True" />
-                    <Node name="Presenter" expanded="True" />
-                  </Node>
-                </Node>
                 <Node name="Resources" expanded="True">
                   <Node name="layout" expanded="True" />
+                  <Node name="menu" expanded="True" />
                   <Node name="values" expanded="True" />
                 </Node>
               </Node>
@@ -44,5 +33,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
+  <MonoDevelop.Ide.ItemProperties.App.Event AndroidDesignerPreferredTheme="AppTheme" PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" AndroidDesignerPreferredDevice="pixel_3a_xl" />
 </Properties>
