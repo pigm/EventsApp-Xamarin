@@ -28,5 +28,6 @@
 	<string name="edit_event">Editar evento</string>
 	<string name="message_detele_event">Evento eliminado exitosamente.</string>
 	<string name="message_edit_event">Evento editado exitosamente.</string>
+	<string name="message_add_event">Evento agregado con exito.</string>
 	<string name="category_detail">Este evento pertenece a la categoria</string>	
 </resources>

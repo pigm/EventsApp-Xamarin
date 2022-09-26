@@ -75,15 +75,7 @@ namespace Event.Event.Presentation.Activity
                 Finish();
             };
             titleToolbarText.Text = GetString(Resource.String.events_detail);
-            eventDetailImage.SetImageBitmap(GeneralUtils.LoadImageFromWebOperations(eventData.ImageUrl));
-            titleEventDetailText.Text = eventData.Title;
-            dayDetailText.Text = eventData.Date.Substring(0, 2);
-            monthDetailText.Text = eventData.Date.Substring(3, 3);
-            startTimeDetailText.Text = "De " + eventData.StartTime;
-            endTimeDetailText.Text = eventData.EndTime;
-            addressEventDetailText.Text = eventData.Address;
-            var price = String.Format("{0:N0}", eventData.Price);
-            priceEventDetailText.Text = "$" + price + ".00 MXN";
+            SetDataView(eventData);
             paymentDetailButton.Click += delegate
             {
                 GoToUrlPayment();
@@ -114,7 +106,7 @@ namespace Event.Event.Presentation.Activity
         {
             Intent goToUpdateEvent = new Intent(this, typeof(UpdateEventActivity));
             goToUpdateEvent.PutExtra("EVENT", JsonConvert.SerializeObject(eventData));
-            StartActivity(goToUpdateEvent);
+            StartActivityForResult(goToUpdateEvent, Constants.FROM_DETAIL_TO_UPDATE);
         }
 
         private void GoToUrlPayment()
@@ -147,6 +139,31 @@ namespace Event.Event.Presentation.Activity
                 }
             };
             popupMenu.Show();
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            //adapter = ((ListEventAdapter)eventGridView.Adapter);
+            if (requestCode == Constants.FROM_DETAIL_TO_UPDATE
+                && resultCode == Result.Ok
+                && data != null)
+            {
+                eventData = JsonConvert.DeserializeObject<EventData>(data.GetStringExtra("EVENT"));
+                SetDataView(eventData);
+            }
+        }
+
+        private void SetDataView(EventData data) {
+            eventDetailImage.SetImageBitmap(GeneralUtils.LoadImageFromWebOperations(data.ImageUrl));
+            titleEventDetailText.Text = data.Title;
+            dayDetailText.Text = data.Date.Substring(0, 2);
+            monthDetailText.Text = data.Date.Substring(3, 3);
+            startTimeDetailText.Text = "De " + data.StartTime;
+            endTimeDetailText.Text = data.EndTime;
+            addressEventDetailText.Text = data.Address;
+            var price = String.Format("{0:N0}", data.Price);
+            priceEventDetailText.Text = "$" + price + ".00 MXN";
         }
     }
 }

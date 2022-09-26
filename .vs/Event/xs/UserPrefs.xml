@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{5310E991-9275-4158-AD4A-34E381134253}|Default">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_33_x86_64" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Resources/layout/activity_list_event.xml">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_33_x86_64" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event/Event/Presentation/Activity/AddEventActivity.cs">
     <Files>
       <File FileName="Event/Resources/layout/activity_update_event.xml" Line="98" Column="3" />
       <File FileName="Event/Resources/layout/activity_list_event.xml" Line="45" Column="41" />
+      <File FileName="Event/Event/Presentation/Activity/AddEventActivity.cs" Line="146" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,9 +17,13 @@
           <Node name="Event" expanded="True">
             <Node name="App" expanded="True">
               <Node name="Event" expanded="True">
+                <Node name="Packages" selected="True" />
+                <Node name="Event" expanded="True">
+                  <Node name="Presentation" expanded="True">
+                    <Node name="Activity" expanded="True" />
+                  </Node>
+                </Node>
                 <Node name="Resources" expanded="True">
-                  <Node name="layout" expanded="True" />
-                  <Node name="menu" expanded="True" />
                   <Node name="values" expanded="True" />
                 </Node>
               </Node>
@@ -33,5 +36,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.App.Event AndroidDesignerPreferredTheme="AppTheme" PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" AndroidDesignerPreferredDevice="pixel_3a_xl" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.App.Event AndroidDesignerPreferredDevice="pixel_3a_xl" AndroidDesignerPreferredTheme="AppTheme" PreferredExecutionTarget="Android.Pixel_3a_API_33_x86_64" />
 </Properties>

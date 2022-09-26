@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -142,6 +143,6 @@ namespace Event.Event.Presentation.Activity
         public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
         {
             dateEditText.Text = GeneralUtils.DateFormat(year, month, dayOfMonth);
-        }        
+        }
     }
 }

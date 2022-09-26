@@ -13,6 +13,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Event.Commons;
 using Event.Commons.Utils;
 using Event.Event.Data;
 using Newtonsoft.Json;
@@ -68,7 +69,38 @@ namespace Event.Event.Presentation.Activity
 
         private void UpdateEvent()
         {
+            UpdatePersistentData();
+            
+            Finish();
+        }
+
+        private void UpdatePersistentData()
+        {
+            
+            DataManager.RealmInstance.Write(() =>
+            {
+                var eventUpdate = DataManager.RealmInstance.All<EventData>()
+                                                           .Where(item =>
+                                                                item.Title == this.eventData.Title)
+                                                           .FirstOrDefault();
+
+                eventUpdate.Address = addressUpdateEditText.Text;
+                eventUpdate.Date = dateUpdateEditText.Text;
+                eventUpdate.StartTime = startTimeUpdateEditText.Text;
+                eventUpdate.EndTime = endTimeUpdateEditText.Text;
+            });
+
             Toast.MakeText(this, GetString(Resource.String.message_edit_event), ToastLength.Short).Show();
+            SetResultData(DataManager.RealmInstance.All<EventData>()
+                .Where(item => item.Title == this.eventData.Title)
+                .FirstOrDefault());            
+        }
+
+        private void SetResultData(EventData eventUpdate) {
+            Intent intent = new Intent();
+            intent.PutExtra("EVENT", JsonConvert.SerializeObject(eventUpdate));
+            SetResult(Result.Ok, intent);
+            Finish();
         }
     }
 }

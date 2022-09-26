@@ -14,7 +14,11 @@ namespace Event.Commons.Utils
 
         /* ON ACTIVITY RESULT RELATED */
         public static int FROM_LIST_EVENT_TO_ADD = 1;
-        public static int FROM_LIST_EVENT_TO_DETAIL = 1;
+        public static int FROM_LIST_EVENT_TO_DETAIL = 2;
+        public static int FROM_DETAIL_TO_UPDATE = 3;
+
+        /* RESULT CODE */
+        public static int RESULT_SUCCESS = 1;
     }
 }
 
